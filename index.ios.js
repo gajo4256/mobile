@@ -1,13 +1,35 @@
 import React, { Component } from 'react';
-import { AppRegistry } from 'react-native';
-import { Examples } from '@shoutem/ui';
+import {Provider} from 'react-redux'
+import {
+  AppRegistry,
+  Navigator,
+} from 'react-native';
+
+import Store from "./app/store";
+import Routes from "./app/routes";
 
 class JsZgb extends Component {
-  render() {
+  renderScene(route, navigator) {
+    const Component = route.component;
     return (
-      <Examples />
+      <Component
+        route={route}
+        {...route.passProps}
+        navigator={navigator}
+        topNavigator={navigator}
+      />
     );
   }
+render() {
+  return (
+    <Provider store={Store}>
+      <Navigator
+        initialRoute={Routes.tabs}
+        renderScene={this.renderScene}
+      />
+    </Provider>
+  );
+}
 }
 
 AppRegistry.registerComponent('jszgbMobile', () => JsZgb);
