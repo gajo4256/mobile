@@ -7,7 +7,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@shoutem/ui": "^0.10.1",
     "react": "15.4.1",
     "react-native": "0.39.2",
     "react-native-markdown-syntax": "^0.1.0",
@@ -20,7 +19,6 @@
   "devDependencies": {
     "babel-jest": "^17.0.2",
     "babel-preset-react-native": "1.9.0",
-    "flow-bin": "^0.37.0",
     "jest": "^17.0.3",
     "react-test-renderer": "15.4.1",
     "babel-eslint": "^7.1.1",
