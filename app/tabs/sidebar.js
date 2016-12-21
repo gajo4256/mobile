@@ -25,8 +25,8 @@ class Sidemenu extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.elementContainer}
-            onPress={() => this.menuChaged("upcomming")}>
-              <Text style={styles.title}>Upcomming</Text>
+            onPress={() => this.menuChaged("events")}>
+              <Text style={styles.title}>Events</Text>
           </TouchableOpacity>
         </View>
     </View>

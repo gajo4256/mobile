@@ -21,10 +21,10 @@ class News extends Component {
           title={{ title: "News"}}
           leftButton={{ title: "Menu", handler: this.props.openDrawer }}
         />
-        <View style={{ paddingLeft: 30, paddingRight: 30}}>
+        <View style={{ paddingHorizontal: 10}}>
           {this.props.news.length ?
           <Markdown>
-            {this.props.news[0]}
+            {this.props.news[0].toString()}
           </Markdown>
           : <Text>Nema</Text>}
         </View>

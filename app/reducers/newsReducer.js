@@ -3,7 +3,7 @@ const defaultState = {
   posts: []
 };
 
-export default function errorsReducer(state = defaultState, action) {
+export default function newsReducer(state = defaultState, action) {
   switch (action.type) {
     case "GET_NEWS_COMPLETED": {
       return {

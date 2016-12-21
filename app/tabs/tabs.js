@@ -6,6 +6,7 @@ import DrawerLayout from 'react-native-drawer-layout';
 
 import SideMenu from "./sidebar";
 import News from "../news/news";
+import Upcomming from "../events/events";
 
 class Tabs extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Tabs extends Component {
   }
   renderContent() {
     return (
-      <News
+      <Upcomming
         openDrawer={this.openDrawer}
       />);
   }
