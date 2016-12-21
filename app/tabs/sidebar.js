@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Image } from 'react-native';
+import { changeTab } from "./actions";
 
 import logo from "../img/jszgb.png";
 
 class Sidemenu extends Component {
+  constructor(props) {
+    super(props);
+    this.menuChaged = this.menuChaged.bind(this);
+  }
   menuChaged(item) {
-    console.log(item);
+    this.props.dispatch(changeTab(item));
   }
   render() {
     return (

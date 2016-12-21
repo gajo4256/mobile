@@ -39,7 +39,7 @@ class Events extends Component {
 
 export default connect((store) => {
   return {
-    events: store.upcomming.events,
-    fetching: store.upcomming.fetching,
+    events: store.events.events,
+    fetching: store.events.fetching,
   }
 })(Events);

@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import {
   View,
   ScrollView,
-  Text
+  Text,
+  ActivityIndicator
 }  from 'react-native';
 import { connect } from "react-redux";
 import NavigationBar from 'react-native-navbar';
@@ -26,7 +27,7 @@ class News extends Component {
           <Markdown>
             {this.props.news[0].toString()}
           </Markdown>
-          : <Text>Nema</Text>}
+          : <ActivityIndicator />}
         </View>
       </ScrollView>
   )}

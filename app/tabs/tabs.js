@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import {
-  View
-}  from 'react-native';
+import { connect } from "react-redux";
+
 import DrawerLayout from 'react-native-drawer-layout';
 
 import SideMenu from "./sidebar";
@@ -17,14 +16,23 @@ class Tabs extends Component {
    this.drawer.openDrawer()
   }
   renderContent() {
-    return (
+    let content = (
       <Upcomming
         openDrawer={this.openDrawer}
-      />);
+      />
+    );
+    if(this.props.tab === "news"){
+      content = (
+        <News
+          openDrawer={this.openDrawer}
+        />
+      );
+    }
+    return content;
   }
   render() {
     const { Left } = DrawerLayout.positions;
-    const navigationView = <SideMenu onSelected={()=>{}}/>;
+    const navigationView = <SideMenu dispatch={this.props.dispatch} />;
     return (
       <DrawerLayout
         ref={(drawer) => this.drawer = drawer }
@@ -38,4 +46,8 @@ class Tabs extends Component {
   }
 }
 
-export default Tabs;
+export default connect((store) => {
+  return {
+    tab: store.tabs.tab
+  }
+})(Tabs);

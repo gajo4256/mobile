@@ -1,9 +1,11 @@
 import {combineReducers} from "redux";
 
 import news from "./newsReducer";
-import upcomming from "./upcommingReducer";
+import events from "./eventsReducer";
+import tabs from "./tabsReducer";
 
 export default combineReducers({
   news,
-  upcomming
+  events,
+  tabs
 });
