@@ -11,6 +11,7 @@ class Sidemenu extends Component {
   }
   menuChaged(item) {
     this.props.dispatch(changeTab(item));
+    this.props.closeDrawer();
   }
   render() {
     return (

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {
   View,
   ScrollView,
-  Text,
   ActivityIndicator
 }  from 'react-native';
 import { connect } from "react-redux";

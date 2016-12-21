@@ -11,9 +11,13 @@ class Tabs extends Component {
   constructor(props) {
     super(props);
     this.openDrawer = this.openDrawer.bind(this);
+    this.closeDrawer = this.closeDrawer.bind(this);
   }
   openDrawer() {
-   this.drawer.openDrawer()
+   this.drawer.openDrawer();
+  }
+  closeDrawer() {
+   this.drawer.closeDrawer();
   }
   renderContent() {
     let content = (
@@ -32,7 +36,7 @@ class Tabs extends Component {
   }
   render() {
     const { Left } = DrawerLayout.positions;
-    const navigationView = <SideMenu dispatch={this.props.dispatch} />;
+    const navigationView = <SideMenu dispatch={this.props.dispatch} closeDrawer={this.closeDrawer} />;
     return (
       <DrawerLayout
         ref={(drawer) => this.drawer = drawer }
